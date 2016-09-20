@@ -45,12 +45,11 @@ s.get(state);
 tick3=state.time;
 print(state.time);
 while (three==True):
-	ref.ref[ha.RHP]=-1.4;
 	ref.ref[ha.LHR]=-.3;
+	ref.ref[ha.LAR]=.3;
+	ref.ref[ha.RHP]=-1.4;
 	ref.ref[ha.RKN]=1.6;
-	ref.ref[ha.LAR]=.4;
 	ref.ref[ha.RAP]=-.3;
-	#ref.ref[ha.LAP]=1;
 	r.put(ref);
 	s.get(state);
 	if ((state.time-tick3)>1):
@@ -70,10 +69,6 @@ while (four==True):
 	s.get(state);
 	if ((state.time-tick4)>1.2):
 		four=False;
-print "Joint = ", state.joint[ha.LEB].pos
-print "Mx = ", state.ft[ha.HUBO_FT_L_FOOT].m_x
-
-
 
 r.close()
 s.close()
